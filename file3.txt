@@ -1,12 +1,5 @@
-const a = 10;
-const b = 5;
-
-const sum = a + b;
-const difference = a - b;
-const product = a * b;
-const quotient = a / b;
-
-console.log("sum:", sum);
-console.log("difference:", difference);
-console.log("product:", product);
-console.log("quotient:", quotient);
+The tram rattled through the quiet street as dusk settled in.
+A man in a blue coat watched reflections ripple across the window.
+Somewhere, a radio played a song no one remembered the name of.
+The city felt paused, like it was holding a long breath.
+Then the doors opened, and everything started moving again.
