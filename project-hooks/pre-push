@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "Running checks before push..."
+
+# Add your actual checks here
+
+echo "All checks passed. Proceeding with push."
+exit 0

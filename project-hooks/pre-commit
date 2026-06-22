@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# 1. Check commit message format (runs on commit, not pre-commit)
+# Note: Commit message validation happens in pre-push or via commit-msg hook
+
+# 2. Check JavaScript formatting with Prettier
+if [ -n "$(git diff --cached --name-only | grep -E '\.(js|jsx|ts|tsx)$')" ]; then
+    echo "Checking JavaScript/TypeScript formatting..."
+    if command -v prettier &> /dev/null; then
+        prettier --check $(git diff --cached --name-only | grep -E '\.(js|jsx|ts|tsx)$')
+    else
+        echo "⚠️  Prettier not found. Install it with: npm install -g prettier"
+    fi
+fi
+
+# 3. Check C# formatting with dotnet format
+if [ -n "$(git diff --cached --name-only | grep '\.cs$')" ]; then
+    echo "Checking C# formatting..."
+    if command -v dotnet &> /dev/null; then
+        dotnet format --verify-no-changes $(git diff --cached --name-only | grep '\.cs$')
+    else
+        echo "⚠️  dotnet not found"
+    fi
+fi
+
+# 4. Check Python formatting (optional, since you have Python code)
+if [ -n "$(git diff --cached --name-only | grep '\.py$')" ]; then
+    echo "Checking Python formatting..."
+    if command -v black &> /dev/null; then
+        black --check $(git diff --cached --name-only | grep '\.py$')
+    else
+        echo "⚠️  Black not found. Install with: pip install black"
+    fi
+fi

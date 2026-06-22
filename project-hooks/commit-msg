@@ -1,0 +1,11 @@
+#!/bin/sh
+
+MSG_FILE="$1"
+FIRST_LINE="$(head -n 1 "$MSG_FILE")"
+
+echo "$FIRST_LINE" | grep -Eq '^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: .+' || {
+    echo "Invalid commit message."
+    echo "Use: feat: short description"
+    echo "Or: fix(scope): short description"
+    exit 1
+}
