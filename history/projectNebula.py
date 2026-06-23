@@ -24,7 +24,6 @@ class Pipeline:
             result["debug"] = True
         return result
 
-
     def _apply_transform(self, text: str) -> str:
         if self.transform == "upper":
             return text.strip().upper()
@@ -33,8 +32,7 @@ class Pipeline:
         if self.transform == "title":
             return text.strip().title()
         return text.strip()
-
-
+dded .py file projectNebula)
 def load_environment(config: dict | None = None) -> Pipeline:
     config = config or {}
     return Pipeline(
