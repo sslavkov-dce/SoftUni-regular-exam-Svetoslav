@@ -1,0 +1,51 @@
+# Project Nebula
+
+A tiny experimental toolkit for turning ordinary ideas into working prototypes.
+
+## What it does
+
+- Collects simple inputs.
+- Transforms them into structured notes.
+- Exports results in readable formats.
+
+## Why it exists
+
+This repository is a playground for quick experimentation, documentation tests, and lightweight automation.
+
+## Getting started
+
+1. Clone the repository.
+2. Install the dependencies.
+3. Run the demo command.
+
+```bash
+python -m nebula demo
+```
+
+## Configuration
+
+Set the following environment variables if needed:
+
+- `NEBULA_MODE` for the runtime profile.
+- `NEBULA_OUTPUT` for the output directory.
+- `NEBULA_DEBUG` to enable verbose logs.
+
+## Example
+
+```python
+from nebula import Pipeline
+
+pipeline = Pipeline(mode="fast")
+result = pipeline.run("hello world")
+print(result)
+```
+
+## File structure
+
+- `src/` application code.
+- `tests/` automated checks.
+- `docs/` supporting notes.
+
+## License
+
+MIT
