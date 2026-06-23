@@ -32,7 +32,7 @@ class Pipeline:
         if self.transform == "title":
             return text.strip().title()
         return text.strip()
-dded .py file projectNebula)
+        
 def load_environment(config: dict | None = None) -> Pipeline:
     config = config or {}
     return Pipeline(
