@@ -1,0 +1,41 @@
+project:
+  name: Project Nebula
+  description: A tiny experimental toolkit for turning ordinary ideas into working prototypes.
+  purpose: A playground for quick experimentation, documentation tests, and lightweight automation.
+
+features:
+  - Collects simple inputs.
+  - Transforms them into structured notes.
+  - Exports results in readable formats.
+
+getting_started:
+  steps:
+    - Clone the repository.
+    - Install the dependencies.
+    - Run the demo command.
+  command: python -m nebula demo
+
+configuration:
+  environment_variables:
+    NEBULA_MODE: Runtime profile.
+    NEBULA_OUTPUT: Output directory.
+    NEBULA_DEBUG: Enables verbose logs.
+
+example:
+  language: python
+  code: |
+    from nebula import Pipeline
+
+    pipeline = Pipeline(mode="fast")
+    result = pipeline.run("hello world")
+    print(result)
+
+file_structure:
+  - path: src/
+    description: Application code.
+  - path: tests/
+    description: Automated checks.
+  - path: docs/
+    description: Supporting notes.
+
+license: MIT
